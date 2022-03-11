@@ -3,9 +3,12 @@
  [NB: this is a job test assessment]
  
  # Usage
- > Clone or download this repositary at[].
+ > Clone or download this repositary at[ https://github.com/LawrenceAmo/bOnline.git ].
+ > 
  > If downloaded, unzip the folder.
+ > 
  > Start your web server and open the web page
+ > 
 
 You can open this web page without a server but some parts of the web page may not function well.
 web server is recommended
