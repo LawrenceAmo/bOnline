@@ -1,0 +1,353 @@
+/* 
+  * All Media query are at bottom
+*/
+
+* {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.text-success {
+  color: #19d5b2;
+}
+.btn {
+  vertical-align: middle;
+  padding: 0.3rem 0.7rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.btn.btn-primary {
+  background-color: #1f8ceb;
+  color: #ffffff;
+}
+
+.btn:focus,
+.btn.focus {
+  box-shadow: 0 0 0 0.2rem rgba(115, 115, 116, 0.25);
+}
+
+/* All Menu styling start */
+.top-bar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #cccccc;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+}
+.side-bar {
+  border-right: 1px solid #cccccc;
+  width: 15%;
+  height: 100%;
+  position: fixed;
+  top: 51px;
+  z-index: 1;
+  background-color: #ffffff;
+}
+.sidebar-toplinks li span {
+  margin-left: 15px;
+  width: 100%;
+}
+
+.logo-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 3%;
+}
+.top-manu {
+  display: flex;
+  float: right;
+  justify-content: end;
+  width: 25%;
+  padding-right: 1%;
+  margin-top: 3px;
+  padding-top: 0px;
+}
+.top-manu div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+.top-manu div:first-child {
+  margin-bottom: 0px;
+}
+.v-line {
+  height: 35px;
+  border-right: 1px solid #394455;
+  padding: 0px;
+  margin-top: 5px;
+}
+.profile-btn {
+  height: 31px;
+  width: 90%;
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  display: flex;
+  justify-content: start;
+  flex-wrap: nowrap;
+}
+.profile-img {
+  width: 30px;
+  height: 30px;
+  margin-top: 8px;
+  border-radius: 50%;
+  border: 1px solid grey;
+}
+.names {
+  margin: 0px;
+}
+.sidebar-toplinks {
+  padding: 0px;
+  margin: 0px;
+}
+.sidebar-toplinks li {
+  padding: 5px;
+  border-radius: 10px;
+  margin: 5px;
+  list-style: none;
+}
+.sidebar-toplinks li:hover {
+  background: #1f8ceb;
+  color: #ffffff;
+}
+/* All Menu styling END */
+
+.main-content {
+  position: absolute;
+  top: 50px;
+  left: 15%;
+  width: 85%;
+  height: 90vh;
+  z-index: -1;
+}
+.top-heading {
+  background-color: white;
+  height: 9vh;
+  padding: 1%;
+}
+.top-heading h3 {
+  padding-bottom: 5px;
+}
+.content {
+  background-color: #ebecee;
+  /* height: 76vh; */
+  padding-bottom: 20px;
+}
+.content .stats {
+  display: flex;
+  padding: 1%;
+  width: 99%;
+  border: 1px solid #cccccc;
+}
+.content .stats div {
+  border: 1px solid #cccccc;
+  padding: 1%;
+  border-radius: 5px;
+  margin-right: 1%;
+  background-color: white;
+}
+.content .stats div:hover {
+  background-color: #b9dcfa;
+  border: 2px solid #1f8ceb;
+}
+.content .stats div b span:last-child {
+  color: #19d5b2;
+  padding: 3px 5px;
+  font-size: small;
+  margin-left: 10px;
+  background-color: #e0fff9;
+  border-radius: 15px;
+}
+.content .stats div b span:last-child:hover {
+  background-color: #ffffff;
+}
+.content .payments-products {
+  padding: 2%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.content .payments-products .payment-details {
+  margin-right: 2%;
+  width: 70%;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+.content .payments-products .products {
+  width: 30%;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+.content .billing-history {
+  padding-bottom: 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+
+.products .title,
+.payment-details .title {
+  padding: 2%;
+  border-bottom: 1px solid #cccccc;
+}
+.billing-history .title {
+  width: 100%;
+  padding: 2%;
+  border-bottom: 1px solid #cccccc;
+}
+.payment-details-info {
+  padding: 2%;
+}
+.payment-details-info div {
+  margin-top: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.payment-details-info div div {
+  padding: 2%;
+  width: 45%;
+  border-radius: 10px;
+  background-color: #eeeeee;
+}
+
+.current-balance,
+.payment-method {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+.current-balance p,
+.payment-method p {
+  display: flex;
+  justify-content: space-between;
+  color: #394455;
+  padding: 10px 0px;
+}
+.current-balance b {
+  padding-top: 2px;
+}
+.current-balance p b,
+.payment-method p b {
+  margin-right: 10px;
+}
+.current-balance,
+.payment-method div:last-child {
+  width: 100%;
+  /* border: 2px solid red */
+}
+
+.products-info {
+  padding-left: 3%;
+  display: flex;
+  flex-direction: column;
+}
+.products-info div {
+  display: flex;
+  padding: 10px 0;
+  border-bottom: 1px solid #cccccc;
+  margin-right: 3%;
+}
+.products-info div b {
+  margin-right: 20px;
+}
+
+.billing-history div:last-child {
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+}
+.table td {
+  border-top: 1px solid #dee2e6;
+}
+
+.table tbody tr {
+  text-align: center;
+}
+
+/*  END for all styling */
+
+/* //////////////////////////      Media Query START             /////////////////////////////////// */
+
+@media only screen and (max-width: 700px) {
+  .side-bar ul li span {
+    display: none;
+  }
+  .top-bar {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    display: flex;
+    background-color: white;
+    justify-content: left;
+  }
+  .logo-container {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .side-bar {
+    display: none;
+  }
+  .main-content {
+    position: absolute;
+    top: 50px;
+    left: 0%;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .top-manu,
+  .logo-container {
+    justify-content: stretch;
+    width: 100%;
+    text-align: center;
+  }
+  .logo-container {
+    width: 20%;
+  }
+  .main-content {
+    top: 80px;
+  }
+  .payments-products,
+  .stats {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+  }
+  .content .payments-products .products,
+  .content .payments-products .payment-details {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+  .table {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+/* END of Media Query */

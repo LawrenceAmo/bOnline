@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bOnline - Dashbord</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+    <script src="assets/js/axios.js"></script>
+        <script src="assets/js/vue.js"></script>
+
+
+  </head>
+  <body class="" >
+    <main id="">
+
+    <!-- header START   -->
+    <header class="" id="profile">
+
+      <!-- Top menu bar START   -->
+      <div class="top-bar">
+        <div class="logo-container">
+          <b
+            ><h3><b style="color: #1f8ceb">b</b>Online</h3></b
+          >
+        </div>
+        <div class="top-manu">
+          <div class="notification-icon">
+            <i class="fas fa-bell" aria-hidden="true"></i>
+          </div>
+          <div class="v-line"></div>
+          <label for="proInfo" class="profile-btn">
+            
+            <!-- User Profile Picture -->
+              <img
+                v-bind:src="'/assets/images/'+userInfo.proPic"
+                class="profile-img"
+                alt=""
+                srcset=""
+              />
+             
+            <div class="names">             
+                <b>{{userInfo.name}} {{userInfo.surName}}</b>
+                <small>{{userInfo.email}}</small>
+              </div>
+              <select  id="proInfo"></select>
+
+            </label>
+      
+          </div>
+        </div>
+        <!-- Top menu bar END   -->
+
+      </div>
+
+      <!-- Side menu bar START   -->
+      <div class="side-bar">
+        <ul class="sidebar-toplinks">
+          <li class="">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <span class="names">Home</span>
+          </li>
+          <li class="">
+            <i class="fa fa-credit-card" aria-hidden="true"></i>
+            <span class="names">Billing</span>
+          </li>
+        </ul>
+      </div>
+      <!-- Top menu bar START   -->
+    </header>
+    <!-- End of Header   -->
+
+    <main class="main-content" id="billingView">
+      <div class="top-heading">
+        <h3 class="">Billing</h3>
+        <p class="">Overview of your accounts</p>
+      </div>
+      <div class="content">
+        <div class="stats">
+          <div class="" v-on:click="getUser(user)"  v-for="user in userData">
+            <b>
+              <span style="color: #1f8ceb">{{user.first_name}} {{user.last_name}}</span><span>Active</span></b>
+             <p>Account ID : {{user.account_id}}</p> 
+          </div>       
+        </div>
+
+        <!-- Billing And Payments Info START   -->
+        <div class="payments-products">
+          <div class="payment-details">
+            <div class="title">
+              <b><span>Payments Details</span></b> <br />
+              <small
+                >View details of your next invoice and payment method</small
+              >
+            </div>
+            <div class="payment-details-info">
+              <b class="" style="font-size: small">Next invoice: {{userInfo.next_invoice_date}}</b>
+              <div class="">
+                <div class="current-balance">
+                  <b class="" style="font-size: small">Currennt balance </b>
+                  <b class="" style="font-size: larger; color: grey"><i class="fas fa-pound-sign    "></i>{{userInfo.balance}}</b>
+                  <p>
+                    <b><i class="fas fa-lock"></i></b>
+                    <small>
+                      This is a secure 256-bit ssl encrypted payment. You're
+                      safe.</small
+                    >
+                  </p>
+                  <div class="">
+                    <button class="btn btn-primary">Pay Now</button>
+                  </div>
+                </div>
+                <div class="payment-method">
+                  <div class=""><b>Payment Method</b></div>
+                  <p>
+                    <b><i class="fa fa-lightbulb text-success"></i></b>
+                    <small>
+                      <b class="text-success">Guid:</b>To manage your payments
+                      more easily, we recomment switching to Direct
+                      Debit.</small
+                    >
+                  </p>
+
+                  <div class="">
+                    <button class="btn btn-primary">
+                      switch to direct debit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="products">
+            <div class="title">
+              <b><span>My Products</span></b> <br />
+              <small>All your products at a glance</small>
+            </div>
+            <div class="products-info" v-for="product in userInfo.products">
+              <div class="">
+                <b class="">
+                  <i class="fa fa-phone-alt" aria-hidden="true"></i
+                ></b>
+                <p class="">VoIP - {{product.product_kind}}</p>
+              </div>
+              <div class="">
+                <b class="">
+                  <i class="fa fa-share-alt"></i></i
+                ></b>
+                <p class="">Fibre - {{product.product_id}}</p>
+              </div>
+              <div class="">
+                <b class="">
+                  <i class="fa fa-desktop" aria-hidden="true"></i
+                ></b>
+                <p class="">Website - {{product.product_detail}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+                <!-- Billing And Payments Info END   -->
+
+                        <!-- Billing History Info START   -->
+
+        <div class="billing-history">
+            <div class="title">
+              <b><span>Billing history</span></b> <br />
+              <small
+                >Choose a billing plan to see more details</small
+              >
+            </div>
+            <div class="">
+                <table class="table">
+                    <thead class="">
+                        <tr>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Balance</th>
+                            <th>Reference</th>
+                            <th>Download</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="billing in billingHistory">
+                                <td>{{billing.date}}</td>
+                                <td>{{billing.type}}</td>
+                                <td> <i class="fas fa-pound-sign    "></i> {{billing.amount}}</td>
+                                <td> <i class="fas fa-pound-sign    "></i> {{billing.balance}}</td><td>{{billing.reference}}</td>
+                                <td> <a href="{{billing.download}}" ><i class="fa fa-download" aria-hidden="true"></i></a> </td>
+                              </tr> 
+                            
+                        </tbody>
+                </table>
+                <center><a href="javascript:prevPage()" v-on:click="prev()" id="btn_prev">Prev</a>
+<a href="javascript:nextPage()" v-on:click="next()" id="btn_next">Next</a></center>
+            </div>
+        </div>
+        <!-- Billing History Info END   -->
+        
+      </div>
+    </main>
+
+    <!--  -->
+    <script src="assets/fontawesome/js/all.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    </main>
+  </body>
+
+</html>
