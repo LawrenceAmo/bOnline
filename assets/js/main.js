@@ -1,3 +1,4 @@
+// User Profile Info
 var app = new Vue({
   el: "#profile",
   data: {
@@ -10,7 +11,7 @@ var app = new Vue({
   },
 });
 
-// All view of
+// All view of Billing Information
 var app = new Vue({
   el: "#billingView",
   data: {
@@ -56,6 +57,7 @@ var app = new Vue({
     ],
   },
   mounted() {
+    // 
     axios
       .get("../assets/js/data.json")
       .then(
@@ -72,8 +74,10 @@ var app = new Vue({
       this.userInfo = data;
     },
     next: function () {
+      // 
     },
     prev: function () {
+      // 
     },
   },
 });

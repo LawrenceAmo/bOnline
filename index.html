@@ -80,7 +80,7 @@
         <div class="stats">
           <div class="" v-on:click="getUser(user)"  v-for="user in userData">
             <b>
-              <span style="color: #1f8ceb">{{user.first_name}} {{user.last_name}}</span><span>Active</span></b>
+              <span style="color: #1f8ceb">{{user.first_name}} {{user.last_name}}</span><span>{{user.account_status}}</span></b>
              <p>Account ID : {{user.account_id}}</p> 
           </div>       
         </div>
