@@ -79,8 +79,14 @@
       <div class="content">
         <div class="stats">
           <div class="" v-on:click="getUser(user)"  v-for="user in userData">
+           
             <b>
-              <span style="color: #1f8ceb">{{user.first_name}} {{user.last_name}}</span><span>{{user.account_status}}</span></b>
+              <span style="color: #1f8ceb">{{user.first_name}} {{user.last_name}}</span>
+              <span v-if="user.account_status === 'Live'" class="status-color c-success">{{user.account_status}}</span>
+              <span v-else-if="user.account_status === 'Suspended'" class="status-color c-warning">{{user.account_status}}</span>
+              <span v-else-if="user.account_status === 'Cancelled'" class="status-color c-danger">{{user.account_status}}</span>
+              <span v-else class="status-color ">{{user.account_status}}</span>
+            </b>
              <p>Account ID : {{user.account_id}}</p> 
           </div>       
         </div>
@@ -99,7 +105,7 @@
               <div class="">
                 <div class="current-balance">
                   <b class="" style="font-size: small">Currennt balance </b>
-                  <b class="" style="font-size: larger; color: grey"><i class="fas fa-pound-sign    "></i>{{userInfo.balance}}</b>
+                  <b class="" style="font-size: larger; color: grey"><i class="fas fa-pound-sign    "></i>{{userInfo.balance.toFixed(2)}}</b>
                   <p>
                     <b><i class="fas fa-lock"></i></b>
                     <small>

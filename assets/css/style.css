@@ -158,17 +158,37 @@
   background-color: #b9dcfa;
   border: 2px solid #1f8ceb;
 }
-.content .stats div b span:last-child {
+.c-success {
   color: #19d5b2;
+  background-color: #e0fff9;
+}
+.c-warning {
+  color: #d4a300;
+  background-color: #ffe89b;
+}
+.c-danger {
+  color: #ff0505;
+  background-color: #ff9a9a;
+}
+.c-success:hover {
+  background-color: #ffffff;
+}
+.c-warning:hover {
+  background-color: #ffffff;
+}
+.c-danger:hover {
+  background-color: #ffffff;
+}
+.status-color {
   padding: 3px 5px;
   font-size: small;
   margin-left: 10px;
-  background-color: #e0fff9;
   border-radius: 15px;
 }
-.content .stats div b span:last-child:hover {
+.content .stats div:hover > .status-color:hover {
   background-color: #ffffff;
 }
+
 .content .payments-products {
   padding: 2%;
   margin-top: 10px;
